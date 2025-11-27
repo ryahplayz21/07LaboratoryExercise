@@ -24,7 +24,7 @@ namespace _07LaboratoryExercise
         public BindingSource bindingSource = new BindingSource();
 
         
-        private static string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\CLAB1-\\Documents\\07LaboratoryExercise\\ClubDB1.mdf;Integrated Security=True;";
+        private static string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Ryah\\Documents\\ClubDB.mdf;Integrated Security=True;Connect Timeout=30";
       
         public string _FirstName, _MiddleName, _LastName, _Gender, _Program;
         public int _Age;
@@ -47,7 +47,7 @@ namespace _07LaboratoryExercise
         public bool RegisterStudent(int ID, long StudentID, string FirstName, string
             MiddleName, string LastName, int Age, string Gender, string Program)
         {
-            sqlCommand = new SqlCommand("INSERT INTO ClubMembers VALUES(@ID, @StudentID, @FirstName, @MiddleName, @LastName, @Age, @Gender, @Program)", sqlConnect);
+            sqlCommand = new SqlCommand("INSERT INTO ClubMember VALUES(@ID, @StudentID, @FirstName, @MiddleName, @LastName, @Age, @Gender, @Program)", sqlConnect);
             sqlCommand.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
             sqlCommand.Parameters.Add("@RegistrationID", SqlDbType.BigInt).Value = StudentID;
             sqlCommand.Parameters.Add("@StudentID", SqlDbType.VarChar).Value = StudentID;
@@ -62,7 +62,7 @@ namespace _07LaboratoryExercise
             sqlCommand.ExecuteNonQuery();
             sqlConnect.Close();
 
-            return true; // Dapat ka mag return og value so return true 
+            return true;
 
         }
 

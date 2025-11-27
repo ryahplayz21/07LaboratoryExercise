@@ -13,7 +13,7 @@ namespace _07LaboratoryExercise
     public partial class FrmClubRegistration : Form
     {
 
-        // adds #9 
+        
         private ClubRegistrationQuery clubRegistrationQuery = new ClubRegistrationQuery();
         private static int ID, Age, count;
         private string FirstName, MiddleName, LastName, Gender, Program;
@@ -35,7 +35,7 @@ namespace _07LaboratoryExercise
             RefreshListOfClubMembers();
         }
 
-        // add #10
+        
         public void RefreshListOfClubMembers()
         {
            
@@ -73,7 +73,7 @@ namespace _07LaboratoryExercise
             clubRegistrationQuery.RegisterStudent(ID, StudentID, FirstName, MiddleName, LastName, Age, Gender, Program);
             RegistrationID();
 
-            // adds #14
+           
 
         }
 
